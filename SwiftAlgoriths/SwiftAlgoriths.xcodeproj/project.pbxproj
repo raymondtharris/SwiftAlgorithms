@@ -12,6 +12,7 @@
 		229173A11CE97F1D0085378C /* SwiftAlgorithsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229173A01CE97F1D0085378C /* SwiftAlgorithsTests.swift */; };
 		229173AC1CE97F550085378C /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229173AB1CE97F550085378C /* QuickSort.swift */; };
 		229173AE1CE97F7B0085378C /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229173AD1CE97F7B0085378C /* MergeSort.swift */; };
+		229A5A0A1CED874A00CD0D75 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A5A091CED874A00CD0D75 /* InsertionSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		229173A21CE97F1D0085378C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		229173AB1CE97F550085378C /* QuickSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 		229173AD1CE97F7B0085378C /* MergeSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
+		229A5A091CED874A00CD0D75 /* InsertionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				229173941CE97F1D0085378C /* SwiftAlgoriths.h */,
 				229173AD1CE97F7B0085378C /* MergeSort.swift */,
 				229173AB1CE97F550085378C /* QuickSort.swift */,
+				229A5A091CED874A00CD0D75 /* InsertionSort.swift */,
 				229173961CE97F1D0085378C /* Info.plist */,
 			);
 			path = SwiftAlgoriths;
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229A5A0A1CED874A00CD0D75 /* InsertionSort.swift in Sources */,
 				229173AE1CE97F7B0085378C /* MergeSort.swift in Sources */,
 				229173AC1CE97F550085378C /* QuickSort.swift in Sources */,
 			);
@@ -391,6 +395,7 @@
 				229173A71CE97F1D0085378C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		229173A81CE97F1D0085378C /* Build configuration list for PBXNativeTarget "SwiftAlgorithsTests" */ = {
 			isa = XCConfigurationList;
@@ -399,6 +404,7 @@
 				229173AA1CE97F1D0085378C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
