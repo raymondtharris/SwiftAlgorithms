@@ -20,6 +20,7 @@ extension Array where Element :  Comparable {
     }
     
     mutating func Merge(first: Int, last: Int, current: Int) {
+        
         let left = last - first + 1
         let right = current - last
         
@@ -35,6 +36,9 @@ extension Array where Element :  Comparable {
         
         // LeftArr insert Max
         // RightArr insert Max
+        
+        leftArray.append(INTMAX_MAX as! Element)
+        rightArray.append(INTMAX_MAX as! Element)
         
         var i = 0
         var j = 0
