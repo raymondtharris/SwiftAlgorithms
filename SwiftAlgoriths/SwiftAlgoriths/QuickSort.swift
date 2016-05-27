@@ -52,34 +52,6 @@ extension Array where Element : Comparable {
         self[last - 1] = temp
         return self.Partition(first, last: last)
     }
-    
-    
-    private mutating func quickSortByLength(substrings: [String], low: Int, high: Int) {
-        var mid: Int
-        if low < high {
-            mid = partition(substrings, low: low, high: high)
-            quickSortByLength(substrings, low: low, high: mid - 1 )
-            quickSortByLength(substrings, low: mid + 1, high: high)
-        }
-    }
-    
-    public mutating func partition< Element : String >(var substrings: [Strings], low: Int, high: Int) -> Int {
-        let valueToCompare = substrings[high - 1].characters.count
-        var i = low - 1
-        for j in low..<high {
-            if substrings[j - 1].characters.count <= valueToCompare {
-                i = i + 1
-                let temp = substrings[i - 1]
-                substrings[i - 1] = substrings[j - 1]
-                substrings[j - 1 ] = temp
-                
-            }
-        }
-        let temp2 = substrings[i]
-        substrings[i] = substrings[high - 1]
-        substrings[high - 1] = temp2
-        return i + 1
-    }
-    
+
 }
 

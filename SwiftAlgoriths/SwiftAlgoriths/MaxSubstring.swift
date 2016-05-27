@@ -12,7 +12,7 @@ extension String {
     
     mutating func maxSubstringWithUniqueCharacters(uniqueChars: Int) -> String {
         var substrings = self.findAllSubstring(self, uniqueCount: uniqueChars)
-        quickSortByLength(substrings, low: 1, high: substrings.count)
+        quickSortByLength(&substrings, low: 1, high: substrings.count)
         print(substrings)
         return substrings[substrings.count-1]
     }
@@ -21,7 +21,7 @@ extension String {
         var returnSubstrings = [String]()
         for i in 0..<aString.characters.count {
             for j in (i+1)...aString.characters.count {
-                var stringSplice = aString.substringWithRange(Range<String.Index>(start: aString.startIndex.advancedBy(i), end: aString.startIndex.advancedBy(j)))
+                let stringSplice = aString.substringWithRange(Range<String.Index>(start: aString.startIndex.advancedBy(i), end: aString.startIndex.advancedBy(j)))
                 var chars = [String]()
                 for k in 0..<stringSplice.characters.count {
                     if !chars.contains(stringSplice.substringWithRange(Range<String.Index>(start: stringSplice.startIndex.advancedBy(k), end: stringSplice.startIndex.advancedBy(k+1)))) {
@@ -37,16 +37,18 @@ extension String {
         return returnSubstrings
     }
     
-    private mutating func quickSortByLength(substrings: [String], low: Int, high: Int) {
+    private func quickSortByLength(inout substrings: [String], low: Int, high: Int) {
         var mid: Int
+        
         if low < high {
-            mid = partition(substrings, low: low, high: high)
-            quickSortByLength(substrings, low: low, high: mid - 1 )
-            quickSortByLength(substrings, low: mid + 1, high: high)
+            mid = partition(&substrings, low: low, high: high)
+            quickSortByLength(&substrings,low: low, high: mid - 1 )
+            quickSortByLength(&substrings, low: mid + 1, high: high)
         }
     }
     
-    private mutating func partition(var substrings: [String], low: Int, high: Int) -> Int {
+    private func partition(inout substrings: [String],low: Int, high: Int) -> Int {
+        
         let valueToCompare = substrings[high - 1].characters.count
         var i = low - 1
         for j in low..<high {
@@ -63,5 +65,5 @@ extension String {
         substrings[high - 1] = temp2
         return i + 1
     }
+    
 }
-
