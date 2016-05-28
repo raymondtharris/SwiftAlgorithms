@@ -21,11 +21,11 @@ extension String {
         var returnSubstrings = [String]()
         for i in 0..<aString.characters.count {
             for j in (i+1)...aString.characters.count {
-                let stringSplice = aString.substringWithRange(Range<String.Index>(start: aString.startIndex.advancedBy(i), end: aString.startIndex.advancedBy(j)))
+                let stringSplice = aString.substringWithRange(Range<String.Index>(aString.startIndex.advancedBy(i)..<aString.startIndex.advancedBy(j)))
                 var chars = [String]()
                 for k in 0..<stringSplice.characters.count {
-                    if !chars.contains(stringSplice.substringWithRange(Range<String.Index>(start: stringSplice.startIndex.advancedBy(k), end: stringSplice.startIndex.advancedBy(k+1)))) {
-                        chars.append(stringSplice.substringWithRange(Range<String.Index>(start: stringSplice.startIndex.advancedBy(k), end: stringSplice.startIndex.advancedBy(k+1))))
+                    if !chars.contains(stringSplice.substringWithRange(Range<String.Index>(stringSplice.startIndex.advancedBy(k)..<stringSplice.startIndex.advancedBy(k+1)))) {
+                        chars.append(stringSplice.substringWithRange(Range<String.Index>(stringSplice.startIndex.advancedBy(k)..<stringSplice.startIndex.advancedBy(k+1))))
                     }
                 }
                 if chars.count < (uniqueCount + 1) {
